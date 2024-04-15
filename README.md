@@ -1,2 +1,2 @@
 # Honors Project Writeup
-## Ashley Fong
+Ashley Fong
