@@ -271,6 +271,7 @@ char *argv[];
   int opt_long = FALSE;  /* -l */
   int opt_notty = FALSE; /* -x */
   int opt_user = FALSE;  /* -u  */
+  //int opt_state = FALSE;  / *  -s  */
   char *ke_path;         /* paths of kernel, */
   char *mm_path;         /* mm, */
   char *fs_path;         /* and fs used in ps -U */
@@ -306,6 +307,11 @@ char *argv[];
         opt_user = TRUE;
         //code to get username
         break;
+      /*case 's':
+        opt_state = TRUE;
+        //code to get selected state
+        break;
+      */
       default:
         usage(argv[0]);
       }
