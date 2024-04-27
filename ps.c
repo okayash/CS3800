@@ -304,12 +304,12 @@ char *argv[];
         opt_notty = TRUE;
         break;
       case 'u':
-        opt_user = TRUE; //filters by selected user's processes
-        //code to get username
+        //opt_user = TRUE; //filters by selected user's processes
+        //code to get username if user is inputed opt U, else, don't opt u and display error
         break;
       /*case 's':
         opt_state = TRUE; //filters by selected state's processes
-        //code to get selected state
+        //code to get selected state, selected state must be in S/Z/etc form
         break;
       */
       default:
@@ -364,7 +364,7 @@ char *argv[];
 
   /* Now loop through process table and handle each entry */
   printf("%s", opt_long ? L_HEADER : S_HEADER);
-  for (i = -nr_tasks; i < nr_procs; i++) {
+  for (i = -nr_tasks; i < nr_procs; i++) { // try to understand this lol
     if (pstat(i, &buf) != -1 &&
         (opt_all || buf.ps_euid == uid || buf.ps_ruid == uid) &&
         (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) {
