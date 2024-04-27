@@ -270,7 +270,7 @@ char *argv[];
   int opt_all = FALSE;   /* -a */
   int opt_long = FALSE;  /* -l */
   int opt_notty = FALSE; /* -x */
-  int opt_user = FALSE;
+  int opt_user = FALSE;  /* -u  */
   char *ke_path;         /* paths of kernel, */
   char *mm_path;         /* mm, */
   char *fs_path;         /* and fs used in ps -U */
