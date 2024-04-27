@@ -270,6 +270,7 @@ char *argv[];
   int opt_all = FALSE;   /* -a */
   int opt_long = FALSE;  /* -l */
   int opt_notty = FALSE; /* -x */
+  int opt_user = FALSE;
   char *ke_path;         /* paths of kernel, */
   char *mm_path;         /* mm, */
   char *fs_path;         /* and fs used in ps -U */
@@ -300,6 +301,10 @@ char *argv[];
         break;
       case 'x':
         opt_notty = TRUE;
+        break;
+      case 'u':
+        opt_user = TRUE;
+        //code to get username
         break;
       default:
         usage(argv[0]);
