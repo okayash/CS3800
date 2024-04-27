@@ -304,11 +304,11 @@ char *argv[];
         opt_notty = TRUE;
         break;
       case 'u':
-        opt_user = TRUE;
+        opt_user = TRUE; //filters by selected user's processes
         //code to get username
         break;
       /*case 's':
-        opt_state = TRUE;
+        opt_state = TRUE; //filters by selected state's processes
         //code to get selected state
         break;
       */
