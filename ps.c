@@ -309,7 +309,7 @@ char *argv[];
         break;
       /*case 's':
         opt_state = TRUE; //filters by selected state's processes
-        //code to get selected state, selected state must be in S/Z/etc form
+        //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable)
         break;
       */
       default:
@@ -364,11 +364,11 @@ char *argv[];
 
   /* Now loop through process table and handle each entry */
   printf("%s", opt_long ? L_HEADER : S_HEADER);
-  for (i = -nr_tasks; i < nr_procs; i++) { // try to understand this lol
+  for (i = -nr_tasks; i < nr_procs; i++) { //it prints each individually
     if (pstat(i, &buf) != -1 &&
         (opt_all || buf.ps_euid == uid || buf.ps_ruid == uid) &&
-        (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) {
-      if (buf.ps_pid == 0 && i != PM_PROC_NR) {
+        (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) { //(opt_user || ???) if buf user =?? (opt_state ???) if buf.ps_state =? initalize the entries here
+      if (buf.ps_pid == 0 && i != PM_PROC_NR) { 
         sprintf(pid, "(%d)", i);
       } else {
         sprintf(pid, "%d", buf.ps_pid);
