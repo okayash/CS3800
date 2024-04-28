@@ -271,7 +271,7 @@ char *argv[];
   int opt_long = FALSE;  /* -l */
   int opt_notty = FALSE; /* -x */
   int opt_user = FALSE;  /* -u  */
-  //int opt_state = FALSE;  / *  -s  */
+  int opt_state = FALSE;  / *  -s  */
   char *ke_path;         /* paths of kernel, */
   char *mm_path;         /* mm, */
   char *fs_path;         /* and fs used in ps -U */
@@ -304,13 +304,14 @@ char *argv[];
         opt_notty = TRUE;
         break;
       case 'u':
-        //opt_user = TRUE; //filters by selected user's processes
-        //code to get username if user is inputed opt U, else, don't opt u and display error something arg[3]
+        opt_user = TRUE; //opts in to filter by selected user's processes
+        //code to get username if user is inputed opt U, else, don't opt u and display error 
+        //else  { return -1; }
         break;
-      /*case 's':
+      case 's':
         opt_state = TRUE; //filters by selected state's processes
-        //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable)
-        break;
+        //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; }
+        break; 
       */
       default:
         usage(argv[0]);
