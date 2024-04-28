@@ -305,12 +305,12 @@ char *argv[];
         break;
       case 'u':
         opt_user = TRUE; //opts in to filter by selected user's processes
-        //code to get username if user is inputed opt U, else, don't opt u and display error 
+        //code to get username if user is inputed opt U, else, don't opt u and display error uid_t type
         //else  { return -1; }
         break;
       case 's':
         opt_state = TRUE; //filters by selected state's processes
-        //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; }
+        //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
         break; 
       */
       default:
@@ -369,7 +369,7 @@ char *argv[];
     if (pstat(i, &buf) != -1 &&
         (opt_all || buf.ps_euid == uid || buf.ps_ruid == uid) &&
         (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) { //(opt_user == FALSE|| buf.ps_euid == user_filter || buf.ps_ruid == user_filter) //if opt_user if false, or process uid matches the inputted user, it passes 
-      //&& (opt_state == FALSE || buf.whatever_state_is_called == state_filter) //if opt_state is false, or the state matches, passes. {
+      //&& (opt_state == FALSE || buf.ps_state == state_filter) //if opt_state is false, or the state matches, passes. {
       if (buf.ps_pid == 0 && i != PM_PROC_NR) { 
         sprintf(pid, "(%d)", i);
       } else {
