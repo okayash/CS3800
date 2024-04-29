@@ -1,13 +1,13 @@
 # Documentation
 Description: 
-djfldsjfldsjflds
+djfldsjfldsjflds\n
 Usage:
   1. ps -u [username you are searching for]
   2. ps -s [state you are searching for]
 Returns:
-sfldsjflsdjf
+sfldsjflsdjf\n
 Examples:
-dfksdfsdjlfdjsl
+dfksdfsdjlfdjsl\n
 # Honors Project Writeup
 
 fdsfdslfdjsflsjdlfsdj
