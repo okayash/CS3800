@@ -1,10 +1,13 @@
 # Documentation
 Description: 
-Parameters:
+djfldsjfldsjflds
+Usage:
   1. ps -u [username you are searching for]
   2. ps -s [state you are searching for]
 Returns:
-
+sfldsjflsdjf
+Examples:
+dfksdfsdjlfdjsl
 # Honors Project Writeup
 
 fdsfdslfdjsflsjdlfsdj
