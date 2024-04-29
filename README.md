@@ -1,4 +1,9 @@
 # Documentation
+Description: 
+Parameters:
+  1. ps -u [username you are searching for]
+  2. ps -s [state you are searching for]
+Returns:
 
 # Honors Project Writeup
 
