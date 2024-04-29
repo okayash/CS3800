@@ -8,7 +8,7 @@
     sfldsjflsdjf\n
 Examples:
     dfksdfsdjlfdjsl\n
-# Honors Project Writeup
+# Honors Project Write up
 
 fdsfdslfdjsflsjdlfsdj
 
