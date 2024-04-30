@@ -13,7 +13,7 @@
     Type these into the command liefnkse
     1. ps -u [ an existing user you are searching for ]
     
-    2. ps -s [ an existing state you are searching for (...) ]
+    2. ps -s [ an existing state you are searching for ( Z, W, S, R, T ) ]
 
     
   Returns:
