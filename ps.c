@@ -304,13 +304,26 @@ char *argv[];
         opt_notty = TRUE;
         break;
       case 'u':
-        opt_user = TRUE; //opts in to filter by selected user's processes
+        //if( user doesn't exist or is not inputted )  {
+          //printf( " write an error msg here " );
+          //return -1;
+        //}
+        //else  { grab user and store in 
+        //uid_t user_filter = arg... 
+        //opt_user = TRUE; 
+        //} //opts in to filter by selected user's processes
         //code to get username if user is inputed opt U, else, don't opt u and display error uid_t type
-        //else  { return -1; }
+        
         break;
       case 's':
-        opt_state = TRUE; //filters by selected state's processes
-        //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
+        //if (state don't exist or isn't inputted){
+          //printf(" write an error here ");
+          //return -1;
+        //}
+        //else{
+          //take that value and store in char state_filter
+          //opt_state = TRUE; //filters by selected state's processes
+        //} //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
         break; 
       */
       default:
