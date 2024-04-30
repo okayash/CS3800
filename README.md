@@ -11,9 +11,9 @@
   Usage:
 
     Type these into the command liefnkse
-    1. ps -u [username you are searching for]
+    1. ps -u [ an existing user you are searching for ]
     
-    2. ps -s [state you are searching for]
+    2. ps -s [ an existing state you are searching for (...) ]
 
     
   Returns:
