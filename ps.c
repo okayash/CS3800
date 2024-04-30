@@ -306,16 +306,14 @@ char *argv[];
       case 'u':
         if( user doesn't exist or is not inputted )  {
           if ( username is not inputted )  {
-            printf( " You didn't add a user. Usage: ps -u <username> " );
-            return -1;
+            err( " You didn't add a user. Usage: ps -u <username> " );
           }
             else  {
-              printf( " Can't get user. " );
-              return -1;
+              err( " Can't get user. " );
           }
         }
         else  { grab user and store in 
-          int user_filter = //change username to uid?
+          int user_filter = //change username to uid? getuid()??? of whatever they put in 
           opt_user = TRUE; 
         } //opts in to filter by selected user's processes
         break;
