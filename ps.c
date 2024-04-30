@@ -322,12 +322,10 @@ char *argv[];
       case 's':
         if (state don't exist or isn't inputted)  {
           if(no inputted state)  {
-            printf(" You didn't input a state. Usage: ps -s <state> ");
-          return -1;
+            err(" You didn't input a state. Usage: ps -s <state> ");
         }
           else  {
-            printf(" Can't get state.  ");
-            return -1;
+            err(" Can't get state.  ");
           }
         }
         else{
