@@ -378,7 +378,7 @@ char *argv[];
 
   /* Now loop through process table and handle each entry */
   printf("%s", opt_long ? L_HEADER : S_HEADER);
-  for (i = -nr_tasks; i < nr_procs; i++) { //it prints each individually
+  for (i = -nr_tasks; i < nr_procs; i++) {
     if (pstat(i, &buf) != -1 &&
         (opt_all || buf.ps_euid == uid || buf.ps_ruid == uid) &&
         (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) { //(opt_user == FALSE|| buf.ps_euid == user_filter || buf.ps_ruid == user_filter) //if opt_user if false, or process uid matches the inputted user, it passes 
