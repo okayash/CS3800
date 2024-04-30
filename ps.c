@@ -315,7 +315,7 @@ char *argv[];
           }
         }
         else  { grab user and store in 
-          uid_t user_filter = arg... 
+          int user_filter = //change username to uid?
           opt_user = TRUE; 
         } //opts in to filter by selected user's processes
         break;
