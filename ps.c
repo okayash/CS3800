@@ -305,8 +305,14 @@ char *argv[];
         break;
       case 'u':
         //if( user doesn't exist or is not inputted )  {
-          //printf( " write an error msg here " );
+          //if ( username is not inputted )  {
+          //printf( " Usage: ps -u <username> " );
           //return -1;
+          //}
+          //else  {
+            //printf( " User doesn't exist. " );
+            //return -1;
+          //}
         //}
         //else  { grab user and store in 
         //uid_t user_filter = arg... 
@@ -317,7 +323,7 @@ char *argv[];
         break;
       case 's':
         //if (state don't exist or isn't inputted){
-          //printf(" write an error here ");
+          //printf(" Usage: ps -s <state> ");
           //return -1;
         //}
         //else{
