@@ -304,34 +304,38 @@ char *argv[];
         opt_notty = TRUE;
         break;
       case 'u':
-        //if( user doesn't exist or is not inputted )  {
-          //if ( username is not inputted )  {
-          //printf( " Usage: ps -u <username> " );
-          //return -1;
-          //}
-          //else  {
-            //printf( " User doesn't exist. " );
-            //return -1;
-          //}
-        //}
-        //else  { grab user and store in 
-        //uid_t user_filter = arg... 
-        //opt_user = TRUE; 
-        //} //opts in to filter by selected user's processes
-        //code to get username if user is inputed opt U, else, don't opt u and display error uid_t type
-        
+        if( user doesn't exist or is not inputted )  {
+          if ( username is not inputted )  {
+            printf( " You didn't add a user. Usage: ps -u <username> " );
+            return -1;
+          }
+            else  {
+              printf( " Can't get user. " );
+              return -1;
+          }
+        }
+        else  { grab user and store in 
+          uid_t user_filter = arg... 
+          opt_user = TRUE; 
+        } //opts in to filter by selected user's processes
         break;
       case 's':
-        //if (state don't exist or isn't inputted){
-          //printf(" Usage: ps -s <state> ");
-          //return -1;
-        //}
-        //else{
+        if (state don't exist or isn't inputted)  {
+          if(no inputted state)  {
+            printf(" You didn't input a state. Usage: ps -s <state> ");
+          return -1;
+        }
+          else  {
+            printf(" Can't get state.  ");
+            return -1;
+          }
+        }
+        else{
           //take that value and store in char state_filter
-          //opt_state = TRUE; //filters by selected state's processes
-        //} //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
+          char state_filter = //arg...
+          opt_state = TRUE; //filters by selected state's processes
+        } //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
         break; 
-      */
       default:
         usage(argv[0]);
       }
@@ -387,8 +391,10 @@ char *argv[];
   for (i = -nr_tasks; i < nr_procs; i++) {
     if (pstat(i, &buf) != -1 &&
         (opt_all || buf.ps_euid == uid || buf.ps_ruid == uid) &&
-        (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) { //(opt_user == FALSE|| buf.ps_euid == user_filter || buf.ps_ruid == user_filter) //if opt_user if false, or process uid matches the inputted user, it passes 
-      //&& (opt_state == FALSE || buf.ps_state == state_filter) //if opt_state is false, or the state matches, passes. {
+        (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) && 
+        (opt_user == FALSE|| buf.ps_euid == user_filter || buf.ps_ruid == user_filter) &&
+        (opt_state == FALSE || buf.ps_state == state_filter)  {  
+        //If opt_user if false, or process real or effective UID matches the inputted user, it passes; and if opt_state is false, or the state matches, it passes. 
       if (buf.ps_pid == 0 && i != PM_PROC_NR) { 
         sprintf(pid, "(%d)", i);
       } else {
