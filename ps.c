@@ -319,7 +319,7 @@ char *argv[];
         }
         else  {
           state_filter = argv[i+1][0];
-          if (strlen(state_filter) != 1 || ((state_filter != 'Z')
+          if ((state_filter != 'Z')
             && (state_filter != 'W')
             && (state_filter != 'Z')) { 
               err(" The state was invalid. ");
