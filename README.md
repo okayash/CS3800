@@ -31,7 +31,7 @@
     
 # Honors Project Write up
 
-  For this project, my objective was to implement a -u and -s command in Minix, which would allow one to filter processes on the process table by a state and user ID. This would provide an individual with functionalities for them to view processes started by another user, processes that are running, etc. 
+    For this project, my objective was to implement a -u and -s command in Minix, which would allow one to filter processes on the process table by a state and user ID. This would provide an individual with functionalities for them to view processes started by another user, processes that are running, etc. 
 
   ## Background
 
