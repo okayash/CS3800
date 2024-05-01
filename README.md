@@ -56,7 +56,7 @@
   Another issue I had was experiencing numerous ``pointer to integer ``errors. To solve this, I found a command called ``atoi`` to convert argv to int and also ensure that only the first character of the state filter is being captured. 
   
   I also struggled to use ``vi`` properly, as I found it difficult to delete and add text due to it requiring you to frequently change modes. 
-  At first, I also had some difficulty understanding how each process entry was being printed, but upon discovery that the bottom for-loop was checking one entry at a time, I found it easier to implement the check for a matching user. For this, I followed the same format for opt_notty, as I remembered that it was also related to some processes being hidden.
+  Finally, I also initally had some difficulty understanding how each process entry was being printed, but upon discovery that the bottom for-loop was checking one entry at a time, I found it easier to implement the check for a matching user. For this, I followed the same format for opt_notty, as I remembered that it was also related to some processes being hidden.
   
 
   ## Conclusion
