@@ -306,16 +306,11 @@ char *argv[];
       case 'u':  
         if ( i + 1 > argc )  {
             err( " You didn't add a UID. Usage: ps -u <UID> " );
-        }
-        else  {
+        }  else  {
           int user_filter = argv[i+1];
-          if( )  {
-
-          } //opts in to filter by selected user's processes
-          else {
-            opt_user = TRUE; 
+          //opts in to filter by selected user's processes
+          opt_user = TRUE; 
           }
-        }
         
         break;
       case 's':
