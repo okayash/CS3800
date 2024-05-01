@@ -309,11 +309,10 @@ char *argv[];
         }
         else  {
           int user_filter = argv[i+1];
-          if( that works )  {
+          if( )  {
             opt_user = TRUE; 
           } //opts in to filter by selected user's processes
-          else  //that didn't work{
-            
+          else {
           }
         }
         
@@ -324,11 +323,12 @@ char *argv[];
         }
         else  {
           char state_filter = argv[i+1];
-          if (that works){
-            opt_state = TRUE;
+          if (strlen(state_filter) != 1 || (strchr("Z", state_filter) == NULL) && (strchr("W", state_filter) == NULL) && 
+            (strchr("R", state_filter) == NULL) && (strchr("T", state_filter) == NULL) && (strchr("S", state_filter) == NULL)) {
+            //that didn't work
           }
-          else  //that didn't work{
-            
+          else  {
+            opt_state = TRUE;
           }
         } //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
         break; 
