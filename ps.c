@@ -304,12 +304,12 @@ char *argv[];
         opt_notty = TRUE;
         break;
       case 'u':
-        if( user doesn't exist or is not inputted )  {
-          if ( username is not inputted )  {
-            err( " You didn't add a user. Usage: ps -u <username> " );
+        if( UID doesn't exist or is not inputted )  {
+          if ( UID is not inputted )  {
+            err( " You didn't add a UID. Usage: ps -u <UID> " );
           }
             else  {
-              err( " Can't get user. " );
+              err( " Can't get UID. " );
           }
         }
         else  { grab user and store in 
@@ -390,7 +390,7 @@ char *argv[];
         (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) && 
         (opt_user == FALSE|| buf.ps_euid == user_filter || buf.ps_ruid == user_filter) &&
         (opt_state == FALSE || buf.ps_state == state_filter)  {  
-        //If opt_user if false, or process real or effective UID matches the inputted user, it passes; and if opt_state is false, or the state matches, it passes. 
+        //If opt_user if false, or process real or effective UID matches the inputted UID, it passes; and if opt_state is false, or the state matches, it passes. 
       if (buf.ps_pid == 0 && i != PM_PROC_NR) { 
         sprintf(pid, "(%d)", i);
       } else {
