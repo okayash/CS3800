@@ -22,7 +22,7 @@
     This prints the process table from the 'ps' only containing  processes with an identical UID or state value to one a user searches for.
 
   Example:
-    ps -s S (short format)
+    ps -s S (short format, can also be used with long)
     
     PID  TTY  TIME  CMD
     68  c1  0:00  getty
