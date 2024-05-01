@@ -310,9 +310,10 @@ char *argv[];
         else  {
           int user_filter = argv[i+1];
           if( )  {
-            opt_user = TRUE; 
+
           } //opts in to filter by selected user's processes
           else {
+            opt_user = TRUE; 
           }
         }
         
@@ -323,9 +324,12 @@ char *argv[];
         }
         else  {
           char state_filter = argv[i+1];
-          if (strlen(state_filter) != 1 || (strchr("Z", state_filter) == NULL) && (strchr("W", state_filter) == NULL) && 
-            (strchr("R", state_filter) == NULL) && (strchr("T", state_filter) == NULL) && (strchr("S", state_filter) == NULL)) {
-            //that didn't work
+          if (strlen(state_filter) != 1 || ((strchr("Z", state_filter) == NULL)
+            && (strchr("W", state_filter) == NULL)
+            && (strchr("R", state_filter) == NULL) 
+            && (strchr("T", state_filter) == NULL) 
+            && (strchr("S", state_filter) == NULL))) { //if the state was empty or if the state is not either of ZWRTS
+              // handle this
           }
           else  {
             opt_state = TRUE;
