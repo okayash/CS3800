@@ -14,7 +14,7 @@
     
   Returns:
   
-    This returns the process table only containing  processes with an identical UID or state value to one a user searches for.
+    This prints the process table from the 'ps' only containing  processes with an identical UID or state value to one a user searches for.
 
 Examples:
 
