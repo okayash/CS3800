@@ -272,6 +272,8 @@ char *argv[];
   int opt_notty = FALSE; /* -x */
   int opt_user = FALSE;  /* -u  */
   int opt_state = FALSE;  /*  -s  */
+  int user_filter = -1;
+  char state_filter;
   char *ke_path;         /* paths of kernel, */
   char *mm_path;         /* mm, */
   char *fs_path;         /* and fs used in ps -U */
@@ -307,7 +309,7 @@ char *argv[];
         if ( i + 1 > argc )  {
             err( " You didn't add a UID. Usage: ps -u <UID> " );
         }  else  {
-          int user_filter = atoi(argv[i+1]);
+          user_filter = atoi(argv[i+1]);
           opt_user = TRUE; 
         }
         break;
@@ -316,7 +318,7 @@ char *argv[];
             err(" You didn't input a state. Usage: ps -s <state> ");
         }
         else  {
-          char state_filter = argv[i+1][0];
+          state_filter = argv[i+1][0];
           if (strlen(state_filter) != 1 || ((state_filter != 'Z')
             && (state_filter != 'W')
             && (state_filter != 'Z')) { 
@@ -382,10 +384,9 @@ char *argv[];
   for (i = -nr_tasks; i < nr_procs; i++) {
     if (pstat(i, &buf) != -1 &&
         (opt_all || buf.ps_euid == uid || buf.ps_ruid == uid) &&
-        (opt_notty || majdev(buf.ps_dev) == TTY_MAJ)) && 
+        (opt_notty || majdev(buf.ps_dev) == TTY_MAJ) && 
         (opt_user == FALSE|| buf.ps_euid == user_filter || buf.ps_ruid == user_filter) &&
-        (opt_state == FALSE || buf.ps_state == state_filter)  {  
-        //If opt_user if false, or process real or effective UID matches the inputted UID, it passes; and if opt_state is false, or the state matches, it passes. 
+        (opt_state == FALSE || buf.ps_state == state_filter))  {  
       if (buf.ps_pid == 0 && i != PM_PROC_NR) { 
         sprintf(pid, "(%d)", i);
       } else {
