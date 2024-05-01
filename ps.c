@@ -307,29 +307,25 @@ char *argv[];
         if ( i + 1 > argc )  {
             err( " You didn't add a UID. Usage: ps -u <UID> " );
         }  else  {
-          int user_filter = argv[i+1];
-          //opts in to filter by selected user's processes
+          int user_filter = atoi(argv[i+1]);
           opt_user = TRUE; 
-          }
-        
+        }
         break;
       case 's':
         if ( i + 1 > argc )  {
             err(" You didn't input a state. Usage: ps -s <state> ");
         }
         else  {
-          char state_filter = argv[i+1];
-          if (strlen(state_filter) != 1 || ((strchr("Z", state_filter) == NULL)
-            && (strchr("W", state_filter) == NULL)
-            && (strchr("R", state_filter) == NULL) 
-            && (strchr("T", state_filter) == NULL) 
-            && (strchr("S", state_filter) == NULL))) { //if the state was empty or if the state is not either of ZWRTS
-              // handle this
+          char state_filter = argv[i+1][0];
+          if (strlen(state_filter) != 1 || ((state_filter != 'Z')
+            && (state_filter != 'W')
+            && (state_filter != 'Z')) { 
+              err(" The state was invalid. ");
           }
           else  {
             opt_state = TRUE;
           }
-        } //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
+        } 
         break; 
       default:
         usage(argv[0]);
