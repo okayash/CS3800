@@ -34,7 +34,7 @@
     
 # Honors Project Write up
 
-  For this project, my objective was to implement a -u and -s command in Minix, which would allow one to filter the statues on the process table by a state and user ID. This would provide an individual with functionalities for them to view processes started by another user, processes that are running, or processes that are sleeping. I wanted to work with the ps command, since while I didn't have any exposure to operating systems before, we had some familiarity with this file due to it being covered in class. It was set up in a way in which one could add more options if they wanted to, so I decided that I would add additional features.
+  For this project, my objective was to implement a -u and -s command in Minix, which would allow one to filter the statues of processes by a state and user ID. This would provide an individual with functionalities for them to view processes started by another user, processes that are running, or processes that are sleeping. I wanted to work with the ps command, since while I didn't have any exposure to operating systems before, we had some familiarity with this file due to it being covered in class. It was set up in a way in which one could add more options if they wanted to, so I decided that I would add additional features.
 
   ## Background
 
@@ -58,7 +58,7 @@
   
 
   ## Conclusion
-  Overall, the project required me to learn more about the functionality of Minix and the usage of C code.
+  Overall, the project required me to learn more about the functionality of Minix and the usage of C code. While I had some understanding of the process statuses from class, but to complete this project, I was required to access outside sources and work on areas that were not required in in-class assignments. From this project, I developed deeper insight into how the ``ps`` command is sorted and then printed in Minix.
   
 ## References
   1. https://www.geeksforgeeks.org/real-effective-and-saved-userid-in-linux/#
