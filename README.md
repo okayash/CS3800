@@ -47,18 +47,19 @@
   To apply these features, I first started out by adding options to the switch case, similar to the assignment PA02 in class. Doing so would enable the user to type the first part of the command, ''ps -[u/s].'' Then, the for loop the switch case is contained in would move to the next argument, which should be the UID or state. I added branching in case a user used the -u/-s command without also including a desired UID/state. In such a scenario, the program would give a user an error and inform them of the correct usage. In the case for the state option, there was also a potential issue in which a user inputs a state that doesn't exist in Minix. For that, I added another branching situation that would leave the user with an error.
   
   Once a user has passed the aformentioned conditions, their argument is stored in a variable and to be used in the function that prints each process line. In that loop, as each individual entry of the table is handled, I added statements that allowed the process to be printed if the filter was off or if the processes had an ID or state that matched the one previously inputted. After that, Minix already handled the actually printing of the entries, and the table would print with only the matching processes.
-  
+
+  ## Discussion
    During this process, I came across a couple of limitations. One limitation I found was that all of Minix's other ps options only require one argument, so I would need to find a way to ensure that the additional commands could receive all the arguments properly. I had an issue in which valid states would lead to the default case in the switch case. At first I had difficulty understanding it, but then I realized I needed to move the for loop so it would be at the argument that needed to be stored in the filter variable.
     
   Another issue I had was experiencing numerous ``pointer to int``errors. To solve this, I found a command called ``atoi`` to convert argv to int and also ensuring that only the first character of the state filter is being captured. 
   
   I also struggled to use ``vi`` properly, as I found it difficult to delete and add text due to it requiring you to frequently change modes. 
   At first, I also had some difficulty understanding how each process entry was being printed, but upon discovery that the bottom for-loop was checking one entry at a time, I found it easier to implement the check for a matching user. For this, I followed the same format for opt_notty, as I remembered that it was also related to some processes being hidden.
-  ## Discussion
   
 
   ## Conclusion
-
+  Overall, the project required me to learn more about the functionality of Minix and the usage of C code.
+  
 ## References
   1. https://www.geeksforgeeks.org/real-effective-and-saved-userid-in-linux/#
   2. https://en.cppreference.com/w/c/string/byte/atoi
