@@ -6,6 +6,7 @@
     
   Usage:
 
+    After copying this file into Minix and using "make,"
     Type either of these into the command line:
     1. ps -u [ an existing UID you are searching for ]
     
@@ -30,7 +31,15 @@
     
 # Honors Project Write up
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  For this project, my objective was to implement a -u and -s command in Minix, which would allow one to filter processes on the process table by a state and user ID. This would provide an individual with functionalities for them to view processes started by another user, processes that are running, etc. 
+
+  ## Background
+
+  ## Methodology
+
+  ## Discussion
+
+  ## Conclusion
 
 ## References
   1. https://www.geeksforgeeks.org/real-effective-and-saved-userid-in-linux/# 
