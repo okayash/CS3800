@@ -6,6 +6,9 @@
     
   Usage:
 
+    Copy ps.c into Minix by mounting Minix, then, once you are in this directory,
+    ''sudo cp -r ps.c -t ../class_minix/minix3bookmnt/usr/src/commands/ps/'' 
+    and unmount.
     After copying this file into Minix and using ``make && make clean && make install``,
     Type either of these into the command line:
     1. ps -u [ an existing UID you are searching for ]
