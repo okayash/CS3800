@@ -10,6 +10,7 @@
     1. ps -u [ an existing UID you are searching for ]
     
     2. ps -s [ an existing state you are searching for from these states ( Z, W, S, R, T ) ]
+    It can also be used with the other Minix settings. (ex. ps -ul R)
 
     
   Returns:
@@ -18,6 +19,7 @@
 
   Example:
     ps -s S
+    
     PID  TTY  TIME  CMD
     68  c1  0:00  getty
     72  c2  0:00  getty
