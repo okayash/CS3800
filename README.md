@@ -6,7 +6,7 @@
     
   Usage:
 
-    After copying this file into Minix and using "make,"
+    After copying this file into Minix and using ``make && make clean && make install``,
     Type either of these into the command line:
     1. ps -u [ an existing UID you are searching for ]
     
