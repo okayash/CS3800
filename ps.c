@@ -305,28 +305,39 @@ char *argv[];
       case 'x':
         opt_notty = TRUE;
         break;
-      case 'u':  
+      case 'u':
+	i++;
         if ( i + 1 > argc )  {
             err( " You didn't add a UID. Usage: ps -u <UID> " );
         }  else  {
-          user_filter = atoi(argv[i+1]);
-          opt_user = TRUE; 
-        }
+           user_filter = atoi(argv[i]);
+           
+           opt_user = TRUE; 
+           break; 
+	}
+        
         break;
       case 's':
+	i++;
         if ( i + 1 > argc )  {
             err(" You didn't input a state. Usage: ps -s <state> ");
         }
         else  {
-          state_filter = argv[i+1][0];
+          state_filter = argv[i][0];
           if ((state_filter != 'Z')
+
             && (state_filter != 'W')
-            && (state_filter != 'Z')) { 
-              err(" The state was invalid. ");
-          }
+            && (state_filter != 'R') 
+            && (state_filter != 'T') 
+            && (state_filter != 'S' )) {
+              err(" state is invalid. please provide another state. ");      
+        
+	} 
           else  {
             opt_state = TRUE;
-          }
+          
+	    break;
+	 }
         } 
         break; 
       default:
@@ -387,6 +398,7 @@ char *argv[];
         (opt_notty || majdev(buf.ps_dev) == TTY_MAJ) && 
         (opt_user == FALSE|| buf.ps_euid == user_filter || buf.ps_ruid == user_filter) &&
         (opt_state == FALSE || buf.ps_state == state_filter))  {  
+         
       if (buf.ps_pid == 0 && i != PM_PROC_NR) { 
         sprintf(pid, "(%d)", i);
       } else {
