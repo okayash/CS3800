@@ -313,7 +313,7 @@ char *argv[];
           }
         }
         else  { grab user and store in 
-          int user_filter = //change username to uid? getuid()??? of whatever they put in 
+          int user_filter = argv[i+1]; 
           opt_user = TRUE; 
         } //opts in to filter by selected user's processes
         break;
