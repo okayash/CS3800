@@ -19,7 +19,7 @@
     This prints the process table from the 'ps' only containing  processes with an identical UID or state value to one a user searches for.
 
   Example:
-    ps -s S
+    ps -s S (short format)
     
     PID  TTY  TIME  CMD
     68  c1  0:00  getty
@@ -31,13 +31,19 @@
     
 # Honors Project Write up
 
-    For this project, my objective was to implement a -u and -s command in Minix, which would allow one to filter processes on the process table by a state and user ID. This would provide an individual with functionalities for them to view processes started by another user, processes that are running, etc. 
+  For this project, my objective was to implement a -u and -s command in Minix, which would allow one to filter the statues on the process table by a state and user ID. This would provide an individual with functionalities for them to view processes started by another user, processes that are running, or processes that are sleeping. 
 
   ## Background
 
+  In other operating systems, such as Linux, a utility exists that allows a user to sort the status of the process list in various ways by using "ps -[option] ..."; however, Minix does not have this functionality. Because of this, I decided to do my honors project on implementing these commands.
+  To develop a solution to this objective, I used reviewed some relevant literature. The first was understanding how these commands worked in Linux through the Linux manual and sites such as Geeks for Geeks, to ensure that I could create an identical service. 
+  
   ## Methodology
 
   ## Discussion
+
+  I came across a couple of limitations. One limitation I found was that all of Minix's other ps options only require one argument, so I would need to find a way to ensure that the additional commands could recieve all the arguments properly.
+  
 
   ## Conclusion
 
