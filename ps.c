@@ -303,33 +303,33 @@ char *argv[];
       case 'x':
         opt_notty = TRUE;
         break;
-      case 'u':
-        if( UID doesn't exist or is not inputted )  {
-          if ( UID is not inputted )  {
+      case 'u':  
+        if ( i + 1 > argc )  {
             err( " You didn't add a UID. Usage: ps -u <UID> " );
-          }
-            else  {
-              err( " Can't get UID. " );
+        }
+        else  {
+          int user_filter = argv[i+1];
+          if( that works )  {
+            opt_user = TRUE; 
+          } //opts in to filter by selected user's processes
+          else  //that didn't work{
+            
           }
         }
-        else  { grab user and store in 
-          int user_filter = argv[i+1]; 
-          opt_user = TRUE; 
-        } //opts in to filter by selected user's processes
+        
         break;
       case 's':
-        if (state don't exist or isn't inputted)  {
-          if(no inputted state)  {
+        if ( i + 1 > argc )  {
             err(" You didn't input a state. Usage: ps -s <state> ");
         }
-          else  {
-            err(" Can't get state.  ");
+        else  {
+          char state_filter = argv[i+1];
+          if (that works){
+            opt_state = TRUE;
           }
-        }
-        else{
-          //take that value and store in char state_filter
-          char state_filter = //arg...
-          opt_state = TRUE; //filters by selected state's processes
+          else  //that didn't work{
+            
+          }
         } //code to get selected state, selected state must be in S/Z/etc form something arg[3] = (a variable) else  { return -1; } this is a char
         break; 
       default:
