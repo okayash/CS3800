@@ -1,7 +1,7 @@
 # Documentation
 
   Description: 
-  
+
    This enables you to filter the processes in the 'ps' command by a desired UID or state.
     
   Usage:
@@ -13,10 +13,8 @@
 
     
   Returns:
-
+  
     This returns the process table only containing  processes with an identical UID or state value to one a user searches for.
-
-
 
 Examples:
 
