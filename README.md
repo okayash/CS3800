@@ -16,6 +16,15 @@
   
     This prints the process table from the 'ps' only containing  processes with an identical UID or state value to one a user searches for.
 
+  Example:
+    ps -s S
+    PID  TTY  TIME  CMD
+    68  c1  0:00  getty
+    72  c2  0:00  getty
+    73  c3 0:00  getty
+
+
+    
     
 # Honors Project Write up
 
