@@ -51,7 +51,7 @@
   ## Discussion
    During this process, I came across a couple of limitations. One limitation I found was that all of Minix's other ps options only require one argument, so I would need to find a way to ensure that the additional commands could receive all the arguments properly. I had an issue in which valid states would lead to the default case in the switch case. At first, I had difficulty understanding it, but then I realized I needed to move the for loop so it would be at the argument that needed to be stored in the filter variable.
 
-  Initially, I wanted to allow a user to search by username by using the getuid(); function on an inputted username; however, upon further research, I found that this command could only be used by individual who is logged in.
+  Initially, I wanted to allow a user to search by username by using the ``getuid()``; function on an inputted username; however, upon further research, I found that this command could only be used by individual who is logged in.
     
   Another issue I had was experiencing numerous ``pointer to integer ``errors. To solve this, I found a command called ``atoi`` to convert argv to int and also ensure that only the first character of the state filter is being captured. 
   
